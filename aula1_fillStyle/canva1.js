@@ -1,7 +1,7 @@
 var canvas= document.getElementById('desenho1')
 var ctx = canvas.getContext('2d')
 
-/*ctx.fillStyle: determina a cor pu o estilo.
+/*ctx.fillStyle: determina a cor para o estilo.
 ctx.fillRect: determina onde o estilo será aplicado no canvas.
 */ 
 ctx.fillStyle= '#00F'
