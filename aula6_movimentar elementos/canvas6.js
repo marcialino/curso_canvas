@@ -21,19 +21,24 @@ function desenha(){
 
     px+=dx
     py+=dy
-
-    if((px<=0) && (py<=0)){
+   /*Se o quadrado estiver totalmente à esquerda indo para á direita(px<=0) e no topo da tela (py<=0).Então dx =1 e dy=0, ele vai mover apenas para a direita, não saindo do topo.*/
+    if((px<=0) && (py<=0)){  
         dx =1
         dy =0
     }
+
+    /* Se o quadrado tiver percorrido toda a extensão de x, ele começa a descer na posição y. Então: dx=0 e dy=1*/
     if ((px + l_ret >=l_canvas) && (py <=0)){
         dx=0
         dy=1
     }
-    if((px+l_ret >=l_canvas)&& (py+a_ret>=a_canvas)){
+    /*Quando o quadradinho percorrer todo o y do canvas, ele pára de descer e começa a movimentar para a esquerda. Então: dx =-1 e dy =0*/ 
+    if((px+l_ret >=l_canvas) && (py+a_ret>=a_canvas)){
         dx=-1
         dy=0
     }
+
+    /*Quando o quadrado percorrer todo o espaço do canvas à direita ele terá que subir no eixo y. Então: dx = 0 e dy = -1*/ 
     if((px<=0)&& (py+a_ret>=a_canvas)){
         dx=0
         dy=-1
