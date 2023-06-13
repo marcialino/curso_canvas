@@ -11,7 +11,7 @@ function desenha(){
     ctx.arc(100, 100, 100, (Math.PI/180)*0, (Math.PI/180)*90, true)
     ctx.fill()
     
-    ctx.beginPath() /*começar outro círculo*/
+    ctx.beginPath() /* usa essa função quando os círculos estão no mesmo eixo, começar outro círculo*/
     ctx.fillStyle ='#f00'
     ctx.arc(100, 100, 100, (Math.PI/180)*0, (Math.PI/180)*90, false)
     
