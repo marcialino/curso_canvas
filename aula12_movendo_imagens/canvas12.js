@@ -3,7 +3,7 @@ let canvas = document.getElementById('desenho1')
 let ctx = canvas.getContext('2d')
 
 let jogador= new Image()
-jogador.src="imagens/cores.png"
+jogador.src="imagens/mario.gif"
 
 let numSprite =0
 let posInix =0
@@ -26,7 +26,9 @@ jogador.addEventListener('load', ()=>{
 
 const desenha=()=>{
     ctx.clearRect(0, 0, 500, 500);
-    ctx.drawImage(jogador, posInix, 0,largSprite, altSprite, posX,posY, largSprite, altSprite)
+    /*ctx.drawImage(jogador, posInix, 0,largSprite, altSprite, posX,posY, largSprite, altSprite)*/
+
+    ctx.drawImage(jogador, 120,80, 100, 200); /*desenhar a imagem, nas posições x e y*. Nas dimensões largura:200 e altura: 300*/
 }
 
 window.addEventListener('keydown',(event)=>{
