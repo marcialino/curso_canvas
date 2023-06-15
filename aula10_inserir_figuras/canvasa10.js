@@ -22,7 +22,9 @@ Limagem e Aimagem: largura e altura da imagem.
   let cores =new Image()
   cores.src="imagens/coresweb.png"
   cores.addEventListener('load', ()=>{
-    ctx.drawImage(cores, 0, 0)
+    ctx.drawImage(cores, 0, 0, 50,50,0,0,50,50)
+    ctx.drawImage(cores, 50, 0,50,50,0,50,50,50)
+    ctx.drawImage(cores, 100, 0,50, 50, 0, 100,50,50 )
   }) 
 
 
