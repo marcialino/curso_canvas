@@ -7,8 +7,9 @@
 
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
 
-    <script src="jogador.js"></script>
+    <script src="Jogador.js"></script>
 
+   
     <style>
         #desenho1{
             border: 1px solid black;
@@ -21,7 +22,6 @@
         <h3>O seu broswer não tem suporte para o canvas/h3>
     </canvas>
 
-   
 
 <script>
 let canvas = document.getElementById('desenho1')
@@ -34,7 +34,7 @@ const teclado={
     esquerda:false,
     direita:false
 }
-const jogador=new Jogador(ctx,teclado)
+const jogador= new Jogador(ctx,teclado)
 
 window.addEventListener('keydown',(event)=>{
     if(event.key==37){
@@ -72,6 +72,7 @@ const game=()=>{
 requestAnimationFrame(game)
 
 </script>
+
 
 </body>
 </html>

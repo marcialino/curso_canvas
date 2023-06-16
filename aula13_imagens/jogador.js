@@ -1,4 +1,5 @@
 class Jogador{
+
     constructor(ctx,teclado){
         this.ctx=ctx
         this.teclado=teclado
@@ -29,8 +30,9 @@ class Jogador{
 
     }
     desenhar(){
-        this.ctx.drawImage(this.nave, this.x, this.y)
         this.gerenciar()
+        this.ctx.drawImage(this.nave, this.x, this.y)
+     
     }
 }
 
