@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Canvas: imagens</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+    <script src="jogador.js"></script>
+
+    <style>
+        #desenho1{
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas id="desenho1" width="500" height="500">
+        <h3>O seu broswer não tem suporte para o canvas/h3>
+    </canvas>
+
+   
+
+<script>
+let canvas = document.getElementById('desenho1')
+let ctx  = canvas.getContext('2d')
+
+
+const teclado={
+    cima:false,
+    baixo:false,
+    esquerda:false,
+    direita:false
+}
+const jogador=new Jogador(ctx,teclado)
+
+window.addEventListener('keydown',(event)=>{
+    if(event.key==37){
+        teclado.esquerda=true
+    }else if(event.key==38){
+        teclado.direita=true
+    }
+    if(event.key==38){
+        teclado.cima=true
+    }else if(event.key==40){
+        teclado.baixo=true
+    }
+
+})
+
+window.addEventListener('keyup', (event)=>{
+    if(event.key==37){
+        teclado.esquerda=false
+    }else if(event.key==38){
+        teclado.direita=false
+    }
+    if(event.key==38){
+        teclado.cima=false
+    }else if(event.key==40){
+        teclado.baixo=false
+    }
+})
+
+const game=()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    jogador.desenhar()
+    requestAnimationFrame(game)
+}
+
+requestAnimationFrame(game)
+
+</script>
+
+</body>
+</html>
