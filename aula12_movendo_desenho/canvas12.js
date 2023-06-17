@@ -1,27 +1,33 @@
 var canvas
 var ctx
-var x  = 250
+var x= 250
 var y= 100
 var dx=5
 var dy=5
 var WIDTH = 500
 var HEIGHT = 200
 
-
-/*Colocar imagem*/
+function Desenhar(){
     let nave = new Image()
     nave.src="imagens/nave.png"
-    nave.addEventListener('load', ()=>{ /*para carregar a imagem*/ 
-        ctx.drawImage(nave, x, y, 100, 200); /*desenhar a imagem, nas posições x e y*. Nas dimensões largura:200 e altura: 300*/
-    })
     
+    nave.addEventListener('load', ()=>{ /*para carregar a imagem*/ 
+    ctx.drawImage(nave, x, y, 100, 200); /*desenhar a imagem, nas posições x e y*. Nas dimensões largura:200 e altura: 300*/
+    })
+}
+
+function LimparTela(){
+    ctx.clearRect(x, y, 100, 200);
+    
+    
+}
 function Iniciar(){
     canvas = document.getElementById('desenho1')
-    ctx = canvas.getContext('2d');
-
-
+    ctx = canvas.getContext('2d')
+    return setInterval(Atualizar, 10)
 }
-    function KeyDown(event){
+  
+function KeyDown (event){
         switch(event.keyCode){
             case 38:
                 if(y-dy >0){
@@ -46,8 +52,14 @@ function Iniciar(){
         }
 
     }
-    window.addEventListener('keydown',KeyDown, true)
+    function Atualizar(){
+        LimparTela()
+        Desenhar()
+    }
+
+    window.addEventListener('keydown', KeyDown, true)
     Iniciar()
+
 
 
 
