@@ -19,7 +19,7 @@ jogador.addEventListener('load', ()=>{
 
     ctx.drawImage(jogador, posInix, 0, largSprite, altSprite,0,0,largSprite,altSprite);
 })
-/*Animação, de um em um segundo*/
+/*Animação, de um objeto*/
 let anima= setInterval(()=>{
     ctx.clearRect(0, 0, 500, 500);
     
