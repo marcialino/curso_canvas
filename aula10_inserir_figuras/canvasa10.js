@@ -6,7 +6,7 @@ let ctx = canvas.getContext('2d')
 let nave = new Image()
 nave.src="imagens/naveweb.png"
 nave.addEventListener('load', ()=>{ /*para carregar a imagem*/ 
-    ctx.drawImage(nave, 120,80, 100, 200); /*desenhar a imagem, nas posições x e y*. Nas dimensões largura:200 e altura: 300*/
+    ctx.drawImage(nave, 120,80, 100, 200); /*desenhar a imagem, nas posições x e y*. Nas dimensões largura:200 e altura: 200*/
 
   })
 /*Recorte de imagens, parâmetros:
