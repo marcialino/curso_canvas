@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cursos Canvas: imagens</title>
-
-    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+ 
 
     <script src="Jogador.js"></script>
 
@@ -27,7 +26,6 @@
 let canvas = document.getElementById('desenho1')
 let ctx  = canvas.getContext('2d')
 
-
 const teclado={
     cima:false,
     baixo:false,
@@ -36,8 +34,52 @@ const teclado={
 }
 const jogador= new Jogador(ctx,teclado)
 
-window.addEventListener('keydown',(event)=>{
-    if(event.key==37){
+function KeyDown(event){
+    switch(event.keyCode){
+        case 38:
+            teclado.direita=true;
+
+        break;
+        case 40:
+            teclado.baixo=true
+
+        break;
+        case 37:
+            teclado.esquerda=true
+        break;
+
+        case 39:
+            teclado.cima=true
+        break
+
+    }
+    
+}
+
+function KeyUp(event){
+    switch(event.keyCode){
+        case 38:
+            teclado.direita=false;
+
+        break;
+        case 40:
+            teclado.baixo=false
+
+        break;
+        case 37:
+            teclado.esquerda=false
+        break;
+
+        case 39:
+            teclado.cima=false
+        break
+
+    }
+    
+}
+
+/*window.addEventListener('keydown',(event)=>{
+  /*  if(event.key==37){
         teclado.esquerda=true
     }else if(event.key==38){
         teclado.direita=true
@@ -61,7 +103,7 @@ window.addEventListener('keyup', (event)=>{
     }else if(event.key==40){
         teclado.baixo=false
     }
-})
+})*/
 
 const game=()=>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
