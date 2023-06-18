@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #desenho1{
+            border: 1px solid black;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas id="desenho1" width="500" height="500">
+        <h3>O seu broswer não tem suporte para o canvas</h3>
+    </canvas>
+
+    
+    <script src="Jogador.js"></script>
+
+<script>
+
+let canvas = document.getElementById('desenho1')
+let ctx = canvas.getContext('2d');
+
+
+
+const teclado={
+    cima:false,
+    baixo:false,
+    esquerda:false,
+    direita:false
+}
+
+const jogador= new Jogador(ctx,teclado)
+
+function KeyDown (event){
+    switch(event.keyCode){
+        case 38:
+           teclado.cima=true
+            
+            break
+        case 40:
+          teclado.baixo=true
+            
+            break
+        case 37:
+            teclado.esquerda=true
+            break
+        case 39:
+            teclado.direita=true
+            break  
+    }
+
+}
+
+window.addEventListener('keyup',(event)=>{
+    if(event.keyCode==37){
+        teclado.esquerda=false
+    }
+    if(event.keyCode==38){
+        teclado.cima=false 
+    }
+    if(event.keyCode==39){
+        teclado.direita=false 
+    }
+    if(event.keyCode==40){
+        teclado.baixo=false 
+    }
+    
+    
+})
+  
+const game =()=>{
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    jogador.desenhar()
+    requestAnimationFrame(game)
+    
+}
+requestAnimationFrame(game)
+
+window.addEventListener('keydown', KeyDown, true)
+    Iniciar()
+
+</script>
+    
+</body>
+</html>

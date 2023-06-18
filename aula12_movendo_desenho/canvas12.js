@@ -17,14 +17,14 @@ function Desenhar(){
 }
 
 function LimparTela(){
-    ctx.clearRect(x, y, 100, 200);
+    ctx.clearRect(0, 0, 500, 500);
     
     
 }
 function Iniciar(){
     canvas = document.getElementById('desenho1')
     ctx = canvas.getContext('2d')
-    return setInterval(Atualizar, 10)
+    return setInterval(Atualizar, 5)
 }
   
 function KeyDown (event){
