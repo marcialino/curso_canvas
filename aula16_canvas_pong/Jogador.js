@@ -5,12 +5,10 @@ class Jogador{
         this.teclado=teclado
         this.x=0
         this.y=0
-        this.vel=5
-        this.nave= new Image()
-        this.nave.src="imagens/nave.png"
-        this.nave.addEventListener('load',()=>{
-            this.desenhar()
-        })
+        this.vel=3
+        this.largura=20
+        this.altura=100
+        
         
     }
     atualizar(){

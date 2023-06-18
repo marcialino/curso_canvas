@@ -13,15 +13,19 @@ class Jogador{
     }
    atualizar(){
     if(this.teclado.esquerda){
+        if(this.x > 0)
         this.x-= this.vel
     }
     if(this.teclado.direita){
+        if(this.x < this.ctx.canvas.width-this.nave.width)
         this.x+=this.vel
     }
     if(this.teclado.cima){
+        if(this.y > 0)
         this.y-=this.vel
     }
     if(this.teclado.baixo){
+        if(this.y < this.ctx.canvas.height - this.nave.height)
         this.y+=this.vel
     }
    }
