@@ -18,7 +18,7 @@
     </canvas>
 
     
-    <script src="Jogador.js"></script>
+<script src="Pad.js"></script>
 
 <script>
 let canvas = document.getElementById('desenho1')
@@ -31,7 +31,7 @@ const teclado={
     direita:false
 }
 
-const jogador = new Jogador(ctx,teclado)
+const jogador = new Pad(ctx,teclado)
 
 window.addEventListener('keydown',(event)=>{
     if(event.keyCode==37){

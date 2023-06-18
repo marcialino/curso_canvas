@@ -1,4 +1,4 @@
-class Jogador{
+class Pad{
 
     constructor(ctx,teclado){
         this.ctx=ctx
@@ -12,22 +12,33 @@ class Jogador{
         
     }
     atualizar(){
+        
         if(this.teclado.esquerda){
+            if(this.x > 0)
             this.x-= this.vel
         }
         if(this.teclado.direita){
+             if(this.x < this.ctx.canvas.width-this.largura)
             this.x+=this.vel
         }
         if(this.teclado.cima){
-            this.y-=this.vel
+            if(this.y > 0)
+             this.y-=this.vel
         }
         if(this.teclado.baixo){
+            if(this.y < this.ctx.canvas.height - this.altura)
             this.y+=this.vel
         }
     }
+    
     desenhar(){
         this.atualizar()
-        this.ctx.drawImage(this.nave, this.x, this.y);
+        this.ctx.fillStyle='#00f'  
+        this.ctx.rect= (this.x, this.y, this.largura, this.altura)
+        this.ctx.clearRect(100,100,100,100)
+        
+  
+          
         
     }
     
