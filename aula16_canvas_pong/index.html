@@ -1,40 +1,37 @@
 <!DOCTYPE html>
-<html lang="pt-br>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Curso de Canvas: Canvas Pong</title>
 
     <style>
         #desenho1{
             border: 1px solid black;
         }
     </style>
-
 </head>
 <body>
+
     <canvas id="desenho1" width="500" height="500">
-        <h3>O seu broswer não tem suporte para o canvas</h3>
+        <h3>Seu broswer não dá suporte ao Canvas</h3>
     </canvas>
 
     
-<script src="Jogador.js"></script>
+    <script src="Jogador.js"></script>
 
 <script>
-
 let canvas = document.getElementById('desenho1')
-let ctx = canvas.getContext('2d');
-
+let ctx = canvas.getContext('2d')
 
 const teclado={
-    cima:false,
     baixo:false,
+    cima:false,
     esquerda:false,
     direita:false
 }
 
-const jogador= new Jogador(ctx,teclado)
-
+const jogador = new Jogador(ctx,teclado)
 
 window.addEventListener('keydown',(event)=>{
     if(event.keyCode==37){
@@ -50,7 +47,6 @@ window.addEventListener('keydown',(event)=>{
         teclado.baixo=true
     }
 })
-    
 
 window.addEventListener('keyup',(event)=>{
     if(event.keyCode==37){
@@ -68,17 +64,17 @@ window.addEventListener('keyup',(event)=>{
     
     
 })
-  
+
 const game =()=>{
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     jogador.desenhar()
     requestAnimationFrame(game)
     
 }
+
 requestAnimationFrame(game)
-
-
-</script>
+ 
+    </script>
     
 </body>
 </html>
