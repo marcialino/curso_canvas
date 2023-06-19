@@ -3,7 +3,7 @@ class Cpu{
     constructor(ctx,bola){
         this.ctx=ctx
         this.bola=bola
-        this.vel=3
+        this.vel=2.5
         this.largura=20
         this.altura=100
         this.x=(this.ctx.canvas.width-this.largura) 
@@ -45,6 +45,14 @@ class Cpu{
                 this.x+=this.vel
             }
 
+        }
+         /*Colisão da bolinha com Cpu */ 
+         if(
+            (this.x <= this.bola.x + this.bola.largura && this.x+this.largura >= this.bola.x)&&
+            (this.y+this.altura >= this.bola.y && this.y <= this.bola.y + this.bola.altura)
+        ){
+            this.bola.dirx=-1
+            this.bola.diry=((this.y+(this.altura/2))-(this.bola.y + (this.bola.altura/2)))/16
         }
 
     }
