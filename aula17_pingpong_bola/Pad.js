@@ -1,5 +1,5 @@
 class Pad{
-
+/*goleiro do lado esquerdo*/ 
     constructor(ctx,teclado){
         this.ctx=ctx
         this.teclado=teclado
@@ -7,11 +7,11 @@ class Pad{
         this.largura=20
         this.altura=100
         this.x=0
-        this.y= (this.ctx.canvas.height/2)-(this.altura/2)/*para colocar o objeto no meio*/
-        
+        this.y= (this.ctx.canvas.height/2)-(this.altura/2)/*para colocar o objeto no meio do Y*/
         window.addEventListener('load',()=>{
             this.desenhar()
-        })
+       
+      })
                 
     }
     atualizar(){
