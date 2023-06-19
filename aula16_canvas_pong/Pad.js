@@ -36,8 +36,9 @@ class Pad{
     
     desenhar(){
         this.atualizar()
+        this.ctx.beginPath();
         this.ctx.fillStyle='#00f'  
-        this.ctx.fillRect=(this.x, this.y, this.largura, this.altura)
+        this.ctx.fillRect(this.x, this.y, this.largura, this.altura)
                 
     }
     
