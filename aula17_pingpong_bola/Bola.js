@@ -17,9 +17,9 @@ class Bola{
     iniciar(){
         this.movendo=true
         this.dirx=-1
-        this.diry=(Math.random()*10 > 5 ? -1 : 1)
+        /*this.diry=(Math.random()*10 > 5 ? -1 : 1)*/
     }
-    gerenciar(){
+    atualizar(){
         if(this.movendo){
             this.x+=(this.dirx*this.vel)
             this.y+=(this.diry*this.vel)
@@ -45,12 +45,13 @@ class Bola{
                 (this.x <= this.jogador.x + this.jogador.largura && this.x+this.largura >= this.jogador.x)&&
                 (this.y+this.altura >= this.jogador.y && this.y <= this.jogador.y + this.jogador.altura)
             ){
-                this.dirx*=-1
+                this.dirx=1
+                this.diry=((this.y+(this.altura/2))-(this.jogador.y + (this.jogador.altura/2)))/16
             }
         }
     }
     desenhar(){
-        this.gerenciar()
+        this.atualizar()
         this.ctx.fillStyle='#000'
         this.ctx.fillRect(this.x, this.y, this.largura, this.altura)
     }
