@@ -1,9 +1,10 @@
 
 
 class Bola{
-    constructor (ctx){
+    constructor (ctx, jogador){
         this.ctx=ctx
         this.movendo=false
+        this.jogador=jogador
         this.dirx=0 /*direção x e y*/
         this.diry=0
         this.vel=3
@@ -23,22 +24,29 @@ class Bola{
             this.x+=(this.dirx*this.vel)
             this.y+=(this.diry*this.vel)
     
-            /*Colisão com a borda direito, inverte a posição*/
+            /*Colisão da bola com a borda direito, inverte a posição*/
             if(this.x>=(this.ctx.canvas.width-this.largura))
             this.dirx=-1
 
-            /*Colisão com a borda esquerda, inverte a posição*/ 
+            /*Colisão da bola com a borda esquerda, inverte a posição*/ 
             if(this.x<= 0)
                 this.dirx=1
 
-            /*Colisão com a borda inferior, inverte a posição*/
+            /*Colisão da bola com a borda inferior, inverte a posição*/
             if(this.y>=(this.ctx.canvas.height-this.altura))
             this.diry=-1
 
-            /*Colisão com a borda superior, inverte a posição*/ 
+            /*Colisão da bola com a borda superior, inverte a posição*/ 
             if(this.y<= 0)
-                this.diry=1     
+                this.diry=1   
 
+            /*Colisão da bolinha com jogador*/ 
+            if(
+                (this.x <= this.jogador.x + this.jogador.largura && this.x+this.largura >= this.jogador.x)&&
+                (this.y+this.altura >= this.jogador.y && this.y <= this.jogador.y + this.jogador.altura)
+            ){
+                this.dirx*=-1
+            }
         }
     }
     desenhar(){
