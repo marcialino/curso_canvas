@@ -34,11 +34,11 @@ class Bola{
 
             /*Colisão da bola com a borda inferior, inverte a posição*/
             if(this.y>=(this.ctx.canvas.height-this.altura))
-            this.diry=-1
+            this.diry*=-1
 
             /*Colisão da bola com a borda superior, inverte a posição*/ 
             if(this.y<= 0)
-                this.diry=1   
+                this.diry*=-1   
 
             /*Colisão da bolinha com jogador*/ 
             if(
