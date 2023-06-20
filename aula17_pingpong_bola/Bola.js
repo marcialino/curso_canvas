@@ -5,7 +5,7 @@ class Bola{
         this.ctx=ctx
         this.movendo=false
         this.jogador=jogador
-        this.dirx=0 /*direção x e y*/
+        this.dirx=-1 /*direção x e y*/
         this.diry=0
         this.vel=3
         this.largura=20
@@ -16,7 +16,7 @@ class Bola{
 
     iniciar(){
         this.movendo=true
-        this.dirx=-1
+        this.diry=0
         /*this.diry=(Math.random()*10 > 5 ? -1 : 1)*/
     }
     atualizar(){
@@ -28,11 +28,15 @@ class Bola{
             if(this.x>=(this.ctx.canvas.width-this.largura)){
                 this.dirx=-1
                 pj1++ /*aumenta a pontuação para o jogador 1*/
+                this.resetarBola()
+                this.dirx=-1  /*a bola volta a movimentar p/esquerda*/ 
             }
             /*Colisão da bola com a borda esquerda, inverte a posição*/ 
             if(this.x<= 0){
                 this.dirx=1
                 pj2++ /*aumenta a pontuação do jogador 2*/ 
+                this.resetarBola()
+                this.dirx=1
             }
             /*Colisão da bola com a borda inferior, inverte a posição*/
             if(this.y>=(this.ctx.canvas.height-this.altura)){
@@ -51,6 +55,13 @@ class Bola{
                 this.diry=((this.y+(this.altura/2))-(this.jogador.y + (this.jogador.altura/2)))/16
             }
         }
+    }
+    /*Voltar a bola para posição inicial, depois que mudar o placar*/
+    resetarBola(){
+        this.movendo=false
+        this.x=this.y=(this.ctx.canvas.width/2)-(this.largura/2)
+        this.y=(this.ctx.canvas.height/2)-(this.altura/2)
+
     }
     desenhar(){
         this.atualizar()
