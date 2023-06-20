@@ -25,21 +25,23 @@ class Bola{
             this.y+=(this.diry*this.vel)
     
             /*Colisão da bola com a borda direito, inverte a posição*/
-            if(this.x>=(this.ctx.canvas.width-this.largura))
-            this.dirx=-1
-
+            if(this.x>=(this.ctx.canvas.width-this.largura)){
+                this.dirx=-1
+                pj1++ /*aumenta a pontuação para o jogador 1*/
+            }
             /*Colisão da bola com a borda esquerda, inverte a posição*/ 
-            if(this.x<= 0)
+            if(this.x<= 0){
                 this.dirx=1
-
+                pj2++ /*aumenta a pontuação do jogador 2*/ 
+            }
             /*Colisão da bola com a borda inferior, inverte a posição*/
-            if(this.y>=(this.ctx.canvas.height-this.altura))
-            this.diry*=-1
-
+            if(this.y>=(this.ctx.canvas.height-this.altura)){
+                this.diry*=-1
+            }
             /*Colisão da bola com a borda superior, inverte a posição*/ 
-            if(this.y<= 0)
+            if(this.y<= 0){
                 this.diry*=-1   
-
+            }
             /*Colisão da bolinha com jogador*/ 
             if(
                 (this.x <= this.jogador.x + this.jogador.largura && this.x+this.largura >= this.jogador.x)&&
