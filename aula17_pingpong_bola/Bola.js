@@ -61,6 +61,10 @@ class Bola{
         this.movendo=false
         this.x=this.y=(this.ctx.canvas.width/2)-(this.largura/2)
         this.y=(this.ctx.canvas.height/2)-(this.altura/2)
+        jogador.x=0
+        jogador.y= (this.ctx.canvas.height/2)-(jogador.altura/2)
+        cpu.x=(this.ctx.canvas.width-cpu.largura) 
+        cpu.y=(this.ctx.canvas.height/2)-(cpu.altura/2)
 
     }
     desenhar(){
