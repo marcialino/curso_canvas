@@ -11,7 +11,7 @@ const jogadorDados={
     posx:0,
     posy:0,
     velocidade:5,
-    img:"imagens/sprite_jogador.png",
+    img:"imagens/mario.gif",
     spritesPorLinha:4,
     spritesPorColuna:4,
     largura:200,
@@ -30,6 +30,7 @@ const jogadorDados={
     jogadorImg:new Image(),
 
 }
+
 
 /*Função de desenhar genérica, para todos os elementos*/
 
@@ -97,7 +98,7 @@ window.addEventListener('keydown',(event)=>{
         jogadorDados.diry=-1
         jogadorDados.cima=true
         jogadorDados.andando=true
-    }else if(event.Code==40){
+    }else if(event.key==40){
         jogadorDados.diry=1
         jogadorDados.baixo=true
         jogadorDados.andando=true
@@ -109,16 +110,16 @@ window.addEventListener('keyup',(event)=>{
         jogadorDados.dirx=0
         jogadorDados.esquerda=false
         jogadorDados.andando=false
-    }else if(event.Code==39){
+    }else if(event.key==39){
         jogadorDados.dirx=0
         jogadorDados.direita=false
         jogadorDados.andando=false
     }
-    if(event.Code==38){
+    if(event.key==38){
         jogadorDados.diry=0
         jogadorDados.cima=false
         jogadorDados.andando=false
-    }else if(event.Code==40){
+    }else if(event.key==40){
         jogadorDados.diry=0
         jogadorDados.baixo=false
         jogadorDados.andando=false
@@ -129,6 +130,7 @@ window.addEventListener('keyup',(event)=>{
 function game(timestamp){
     ctx.clearRect(0,0,1000,500)
     desenhar(ctx,jogadorDados)
+    
     window.requestAnimationFrame(game)
 }
 window.requestAnimationFrame(game)
