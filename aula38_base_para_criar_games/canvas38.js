@@ -11,7 +11,7 @@ const jogadorDados={
     posx:0,
     posy:0,
     velocidade:5,
-    img:"imagens/sprite_jogador4.png",
+    img:"imagens/novo_jogador1.png",
     spritesPorLinha:4,
     spritesPorColuna:4,
     largura:200,
