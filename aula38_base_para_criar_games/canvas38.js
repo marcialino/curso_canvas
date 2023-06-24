@@ -4,21 +4,19 @@ let ctx= canvas.getContext('2d')
 
 /*Jogador*/
 const jogadorDados={
-    vidas:3,
-    energia:100,
-    numeroSprite:0,
-    linhaSprite:0,
+    numeroSprite:0,/*posição zero: 1ª figura*/ 
+    linhaSprite:0,/*posição zero: 1ª figura*/
     posx:0,
     posy:0,
     velocidade:5,
-    img:"imagens/novo_jogador1.png",
+    img:"imagens/spritesheetweb.png",
     spritesPorLinha:4,
     spritesPorColuna:4,
-    largura:200,
+    largura:200,/*largura e altura real de cada figura*/
     altura:270,
-    larguraFinal:70,
+    larguraFinal:70,/*largura e altura que serão mostradas as figuras*/
     alturaFinal:100,
-    dirx:0,
+    dirx:0,/*não está movendo no x. dirx-1: move para a esquerda. dirx=1 move para a direita*/
     diry:0,
     esquerda:false,
     direita:false,
@@ -28,9 +26,8 @@ const jogadorDados={
     atrasoSprite:5,
     maxAtrasoSprite:5,
     jogadorImg:new Image(),
-
+    
 }
-
 
 /*Função de desenhar genérica, para todos os elementos*/
 
@@ -84,21 +81,22 @@ const desenhar=(ctx,dados)=>{
     
 }
 /*Eventos do teclado*/
+
 window.addEventListener('keydown',(event)=>{
-    if(event.key==37){
+    if(event.keyCode==37){
         jogadorDados.dirx=-1
         jogadorDados.esquerda=true
         jogadorDados.andando=true
-    }else if(event.key==39){
+    }else if(event.keyCode==39){
         jogadorDados.dirx=1
         jogadorDados.direita=true
         jogadorDados.andando=true
     }
-    if(event.key==38){
+    if(event.keyCode==38){
         jogadorDados.diry=-1
         jogadorDados.cima=true
         jogadorDados.andando=true
-    }else if(event.key==40){
+    }else if(event.keyCode==40){
         jogadorDados.diry=1
         jogadorDados.baixo=true
         jogadorDados.andando=true
@@ -106,20 +104,20 @@ window.addEventListener('keydown',(event)=>{
 
 })
 window.addEventListener('keyup',(event)=>{
-    if(event.key==37){
+    if(event.keyCode==37){
         jogadorDados.dirx=0
         jogadorDados.esquerda=false
         jogadorDados.andando=false
-    }else if(event.key==39){
+    }else if(event.keyCode==39){
         jogadorDados.dirx=0
         jogadorDados.direita=false
         jogadorDados.andando=false
     }
-    if(event.key==38){
+    if(event.keyCode==38){
         jogadorDados.diry=0
         jogadorDados.cima=false
         jogadorDados.andando=false
-    }else if(event.key==40){
+    }else if(event.keyCode==40){
         jogadorDados.diry=0
         jogadorDados.baixo=false
         jogadorDados.andando=false

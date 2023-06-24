@@ -1,8 +1,8 @@
 
 var canvas;//o elemento canvas sobre o qual desenharemos
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
-var dx = 5;//a tava de variação (velocidade) horizontal do objeto
-var dy = 5;//a tava de variação (velocidade) vertical do objeto
+var dx = 5;//a taxa de variação (velocidade) horizontal do objeto
+var dy = 5;//a taxa de variação (velocidade) vertical do objeto
 var x = 250;//posição horizontal do objeto (com valor inicial)
 var y = 100;//posição vertical do objeto (com valor inicial)
 var WIDTH = 500;//largura da área retangular
