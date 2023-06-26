@@ -13,7 +13,7 @@ cores.addEventListener('load', ()=>{
     largSprite = Limagem/numSpries
     posIniX = largSprite*numSprite
     /*dados para chamar uma imagem:(imagem: XiniRecorte, YinicRecorte, Lrecorte, Arecorte, posX, posY, Limagem, Aimagem*/
-    ctx.drawImage(cores, posIniX, 0,largSprite,50,0,0,200,200);
+ 
     
 })
 let anima=setInterval(()=>{
